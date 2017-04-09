@@ -1,0 +1,46 @@
+<div class="landing">
+
+  <ng-map id="main-map" zoom="4"
+    style="height:100%; width: 100%;"
+    on-click="mapClick($event)"
+    center="39.02, -95.81">
+
+    <!-- <custom-marker ng-repeat="p in positions" position="{{p.pos}}">
+      <div class="location-card">
+        <p>{{p.id}}</p>
+        <p>{{p.pos[0]}}, {{p.pos[1]}}</p>
+      </div>
+    </custom-marker> -->
+    <marker ng-repeat="p in positions" position="{{p.pos}}" id="{{p.id}}" on-click="markerClick(p);"></marker>
+
+    <heatmap-layer id="weather" data="disasterData"></heatmap-layer>
+  </ng-map>
+  <!-- {{vm.geoType}} : {{vm.geoArray}} -->
+</div>
+
+<div class="legend-wrapper">
+  <div class="legend">
+    <table class="table">
+      <tr ng-repeat="d in disasters" ng-click="selectDisaster(d);">
+        <td ng-class="{selected: d.type == selectedDisaster.type}">{{d.type}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="date-slider">
+<rzslider class="custom-slider"
+          rz-slider-model="slider.minValue"
+          rz-slider-high="slider.maxValue"
+          rz-slider-options="slider.options"></rzslider>
+</div>
+
+<div ng-show="selectedAccount" class="acc-info">
+  <p><b>ID: </b> {{selectedAccount.id}}</p>
+  <p><b>City: </b> {{selectedAccount.city}}</p>
+  <p><b>Postal: </b> {{selectedAccount.postal}}</p>
+  <p><b>Premium: </b> {{selectedAccount.premium}}</p>
+  <p><b>Tiv: </b> {{selectedAccount.tiv}}</p>
+
+  <a class="btn btn-action" ng-click="text();">Text Me This</a>
+</div>

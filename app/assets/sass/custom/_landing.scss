@@ -1,0 +1,122 @@
+body {
+  height: 100%;
+}
+
+.ng-scope {
+  height: 100%;
+}
+
+.landing {
+  height: 100%;
+
+  #main-map {
+    .location-card {
+      background-color: white;
+      width: 60px;
+      height: 30px;
+      border: 1px solid #999;
+      box-shadow: 1px 1px 5px #777;
+      >p {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.legend-wrapper {
+  position: absolute;
+  left: 30px;
+  bottom: 40px;
+  height: 24%;
+  min-width: 200px;
+  overflow: hidden;
+  border: 1px solid #999;
+
+  .legend {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -17px;
+    overflow-y: scroll;
+    background-color: rgba(255, 255, 255, 0.2);
+
+    table.table {
+      tr > td {
+        border: none;
+        cursor: pointer;
+
+        &.selected {
+          background-color: rgba(255, 255, 255, 0.9);
+        }
+      }
+    }
+  }
+}
+
+.date-slider {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.22);
+  right: 50px;
+  bottom: 40px;
+  height: 9%;
+  width: 500px;
+  padding: 10px;
+  padding-top: 0px;
+
+  .custom-slider.rzslider .rz-bar {
+    background: #ffe4d1;
+    height: 2px;
+  }
+  .custom-slider.rzslider .rz-selection {
+    background: orange;
+  }
+
+  .custom-slider.rzslider .rz-pointer {
+    width: 8px;
+    height: 16px;
+    top: auto; /* to remove the default positioning */
+    bottom: 0;
+    background-color: #333;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+
+  .custom-slider.rzslider .rz-pointer:after {
+    display: none;
+  }
+
+  .custom-slider.rzslider .rz-bubble {
+    bottom: 14px;
+  }
+
+  .custom-slider.rzslider .rz-limit {
+    font-weight: bold;
+    color: black;
+  }
+
+  .custom-slider.rzslider .rz-tick {
+    width: 1px;
+    height: 10px;
+    margin-left: 4px;
+    border-radius: 0;
+    background: #ffe4d1;
+    top: -1px;
+  }
+
+  .custom-slider.rzslider .rz-tick.rz-selected {
+    background: orange;
+  }
+}
+
+.acc-info {
+  position: absolute;
+  right: 20px;
+  top: 12%;
+
+  padding: 10px;
+
+  background-color: rgba(255, 255, 255, 0.7);
+  height: 220px;
+  width: 160px;
+}
